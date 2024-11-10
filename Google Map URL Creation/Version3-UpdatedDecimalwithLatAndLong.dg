@@ -1,0 +1,10 @@
+locations = Location[ID != null];
+map_urls = "https://www.google.com/maps/dir/";
+for each  i in locations
+{
+	if(i.Latitude != null && i.Longitude != null)
+	{
+		map_urls = map_urls + i.Longitude + "," + i.Latitude + "/";
+	}
+}
+info map_urls;

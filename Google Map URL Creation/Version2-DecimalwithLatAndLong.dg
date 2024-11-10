@@ -1,0 +1,18 @@
+//CREATE GOOGLE MAP URL USING LATITUDE & LONGITUDE
+
+locations = Location[ID != null];
+coordinates = "";
+for each  i in locations
+{
+	if(i.Latitude != null && i.Longitude != null)
+	{
+		coordinates = coordinates + i.Longitude + "," + i.Latitude + "/";
+		coordinates += "Gokul ";
+	}
+}
+if(coordinates.endsWith("/"))
+{
+	coordinates = coordinates.substring(0,coordinates.length() - 1);
+}
+map_urls = "https://www.google.com/maps/dir/" + coordinates;
+info map_urls;

@@ -1,0 +1,34 @@
+//CREATE GOOGLE MAP URL WITH ADDRESS FIELD DATA
+
+
+// Fetch all records from "LocationA" (adjust as necessary)
+locations = Location[ID != 0];
+// Initialize an empty string to store combined latitude and longitude
+
+coordinates = "";
+map_locations = "";
+for each  i in locations
+{
+	city = i.Address.district_city;
+	state = i.Address.state_province;
+	map_locations = map_locations +city+ ",+"+state+"/" ;
+}
+// Loop through each record in the fetched list of records
+for each  loc in locations
+{
+	latitude = loc.Address.latitude;
+	longitude = loc.Address.longitude;
+	// If both latitude and longitude are available, add them to the coordinates string
+	if(latitude != null && longitude != null)
+	{
+		if(coordinates != "")
+		{
+			coordinates = coordinates + "+";
+		}
+		coordinates = coordinates + latitude + "," + longitude;
+	}
+}
+// Generate the Google Maps URL with all coordinates
+map_url = "https://www.google.com/maps/dir/" + map_locations +"@" +coordinates;
+openUrl( map_url, "new window");
+// info map_url;
