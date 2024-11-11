@@ -1,0 +1,24 @@
+rec = Returns[Orders_ID == input.ID];
+if(input.Returned_Yes_No == "Yes")
+{
+	if(rec.count() == 0)
+	{
+		recid = insert into Returns
+		[
+			Added_User=zoho.loginuser
+			Orders_ID=input.ID
+			Customer_Name=input.Customer_ID
+		];
+	}
+	else
+	{
+		rec.Customer_Name=input.Customer_ID;
+	}
+}
+else
+{
+	if(rec.count() != 0)
+	{
+		delete from Returns[Orders_ID == input.ID];
+	}
+}
