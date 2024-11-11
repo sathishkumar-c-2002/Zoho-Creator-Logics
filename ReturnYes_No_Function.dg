@@ -1,0 +1,9 @@
+void return_yes()
+{
+	from_returns = Returns[ID != null];
+	for each  i in from_returns
+	{
+		a = Orders[ID == i.Orders_ID];
+		a.Returned_Yes_No="Yes";
+	}
+}
