@@ -1,0 +1,11 @@
+void Adding_Customer_Name_1()
+{
+	var = Returns[ID!=null];
+	for each i in var
+	{
+// 		i.Customer_Name = null;						  //Check the modification with Null 
+// 		i.Customer_Name =  i.Orders_ID.Customer_ID;  //Order_ID is the connecting with Orders Form
+		i.Customer_Name = i.Orders_ID.Customer_ID;
+	}
+	info  var.count() ;
+}
