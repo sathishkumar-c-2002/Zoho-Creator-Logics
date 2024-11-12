@@ -1,0 +1,24 @@
+// Form 1                              Form 2
+// Month No   Month Name               MonthNo    Month Name
+// 1                                     1         January
+// 2                                     2         February
+// 6                                     3         March
+// 3                                     4         April
+// 8                                     5         May
+// 4                                     6         June
+// 3                                     7         July
+// 8                                     8         August
+// 3                                     9         September
+// 6                                     10        October
+//                                       11        November
+//                                       12        December
+
+
+void Find_Month()
+{
+	months = Form_2[ID!=null];
+	for each i in months{
+		a = Form_1[Month_No==i.Month_No];
+		i.Month_Name = a.Month_Name;
+	}
+}
