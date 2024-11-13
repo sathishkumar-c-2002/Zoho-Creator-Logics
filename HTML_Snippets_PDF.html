@@ -1,0 +1,142 @@
+<%{
+	max = thisapp.PDF_Details(input.pid);
+	%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Details</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Gokul Company</h2>
+            <p>1234 Gokul, City, State, 636305</p>
+            <p>Email: stargokul.com | Phone: 8220786809</p>
+        </div>
+        <div class="print-section">
+            <h4>PRINT PAGE OPENING IN BUTTON TESTING</h4>
+        </div>
+        <div class="customer-details">
+            <h3>CUSTOMER DETAILS</h3>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><%=max.get("A1A")%></td>
+                    <td>Phone</td>
+                    <td><%=max.get("A2A")%></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><%=max.get("A3A")%></td>
+                    <td>Address</td>
+                    <td><%=max.get("A4A")%></td>
+                </tr>
+                <tr>
+                    <td>Date Of Joining</td>
+                    <td><%=max.get("A5A")%></td>
+                    <td>Worked At</td>
+                    <td><%=max.get("A6A")%></td>
+                </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td><%=max.get("A7A")%></td>
+                    <td>Working Experience</td>
+                    <td><%=max.get("A8A")%></td>
+                </tr>
+            </table>
+        </div>
+        <div class="note">
+            <p>Note: This is a testing pages using print</p>
+        </div>
+    </div>
+</body>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    width: auto;
+    max-width: auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header p {
+    font-size: 14px;
+    color: #555;
+}
+
+.print-section {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.customer-details {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.customer-details h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.note {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+}
+ 
+</style>
+</html>
+<%
+
+}%>

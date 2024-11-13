@@ -1,0 +1,21 @@
+// openUrl("https://creatorapp.zohopublic.in/sathishkumarchandrasekar/dinesh-superstore1/page-perma/PDF_UI/w5Wgh4xFkPNrY3gvh7jm3DXOaKBqbr1ZPH4OjtM74bDt1G79fPprqtZatX6s8KUaUBNYJM7saa44fMDhaXgn0yyQJpP2zhG4nw5e","new window");
+file_Name = "Sathish";
+creatorurl = "https://creatorapp.zohopublic.in/export/sathishkumarchandrasekar/dinesh-superstore1/pdf/PDF_UI/w5Wgh4xFkPNrY3gvh7jm3DXOaKBqbr1ZPH4OjtM74bDt1G79fPprqtZatX6s8KUaUBNYJM7saa44fMDhaXgn0yyQJpP2zhG4nw5e/?isc5page=true&zc_PdfOrientation=portrait&zc_PdfSize=A4&zc_FileName='" + file_Name + "'&pid=" + input.ID+"&zc_PageNumber=true";
+Creatorfile = invokeurl
+[
+	url :creatorurl
+	type :GET
+];
+
+
+input.File_upload = Creatorfile;
+openUrl(creatorurl,"new window");
+
+sendmail
+[
+	from: zoho.adminuserid
+	to: "sathish@zrubix.com"
+	subject: "Open PDF Testing"
+	message: "Hello"
+	Attachments:file:Creatorfile
+]
