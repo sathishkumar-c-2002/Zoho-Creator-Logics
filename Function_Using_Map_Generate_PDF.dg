@@ -1,0 +1,16 @@
+map PDF_Details(int rec_id)
+{
+	datamap = Map();
+	var = Print_PDF[ID==rec_id];
+	datamap.put("A1A", var.Name);
+	datamap.put("A2A", var.Phone_Number);
+	datamap.put("A3A", var.Email);
+	datamap.put("A4A", var.Address);
+	datamap.put("A5A", var.Date_of_Joining);
+	datamap.put("A6A", var.Worked_At);
+	datamap.put("A7A", var.Salary);
+	datamap.put("A8A", var.Working_Experience);
+	
+	info  datamap;
+	return datamap;
+}
