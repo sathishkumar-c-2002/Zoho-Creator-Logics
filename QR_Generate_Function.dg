@@ -1,0 +1,11 @@
+void QrCode(int n)
+{
+	a = Print_PDF[ID != null];
+	// 	web_url = "https://quickchart.io/qr?text=";
+	web_url = " https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=";
+	for each  i in a
+	{
+		var = web_url + i.ID;
+		i.Image="<img src='" + var + "'></img>";
+	}
+}
