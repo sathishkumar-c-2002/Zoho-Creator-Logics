@@ -1,0 +1,15 @@
+void Test.DateFilter()
+{
+	// 	rec = Orders[Order_Date<"06-Aug-2017"];
+	// 	info rec.count();
+	rec = Orders[Order_Date != null];
+	a = 0;
+	for each  i in rec
+	{
+		if(i.Order_Date.getDayOfWeek() == 2)
+		{
+			a = a + 1;
+		}
+	}
+	info a;
+}
