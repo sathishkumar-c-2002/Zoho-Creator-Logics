@@ -1,0 +1,7 @@
+string Test.DisplayDayinCustomerName(date n)
+{
+	var = Orders[Order_Date == n];
+	var.Customer_Name=var.Order_Date.getDay();
+	return var;
+	// 	return n.tostring("EEEE") ;
+}
