@@ -1,0 +1,7 @@
+string Test.DayFind(date n)
+{
+	var = n.getDayOfWeek();
+	info var;
+	datalist = {"","Sun","Mon","Tues","Wed","Thurs","Fri","Sat"};
+	return datalist.get(var);
+}
