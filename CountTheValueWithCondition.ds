@@ -1,0 +1,6 @@
+void Test.CountOfRecords()
+{
+	a = Ship_Mode[Shipment_Mode == "First Class"];
+	b = Orders[Ship_Mode == a.ID && Returned_Yes_No == "No"];
+	info b.count();
+}
