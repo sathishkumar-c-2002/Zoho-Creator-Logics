@@ -1,0 +1,24 @@
+void WeekDays.WeekdaysFunction()
+{
+	dayList = List();
+	dayList = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+	var = '17-Mar-2019';
+	endDate = var.eomonth(0);
+	info endDate;
+	dayNumber = var.weekday();
+	day = dayList.get(dayNumber - 1);
+	info day;
+	findDay = var.getDay() / 7;
+	findDay = findDay.ceil();
+	info findDay + "-" + day;
+	
+	startDate = var.eomonth(0).toStartOfMonth();
+	info startDate;
+	if day=="Sunday"{
+	getSunday = startDate.workDaysBetween(endDate,{"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"})+1;			
+	}
+	else{
+		getSunday = startDate.workDaysBetween(endDate,{"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"});			
+	}	
+	info getSunday;
+}
