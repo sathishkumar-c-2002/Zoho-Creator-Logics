@@ -1,0 +1,14 @@
+input.Check_Out = input.Modified_Time;
+start = input.Check_In;
+end = input.Check_Out;
+// input.Overall_Time = timeBetween(start,end);
+a = timeBetween(start,end);
+info a ;
+a = a.getprefix(":")+":"+a.getsuffix(":").getprefix(":")+":00";
+
+// aa = a.toTime("HH:mm");
+// info aa;
+// aa =aa.tostring("hh:mm:ss");
+
+// input.Overall_Time = a;
+input.Overall_Time=a;
