@@ -1,0 +1,29 @@
+input.Check_Out = input.Modified_Time;
+start = input.Check_In;
+end = input.Check_Out;
+// input.Overall_Time = timeBetween(start,end);
+a = timeBetween(start,end);
+// info a ;
+hour = a.getprefix(":");
+minute = a.getsuffix(":");
+// info minute;
+if(hour.tolong() <= 9)
+{
+	a = "0" + hour + ":" + a.getsuffix(":").getprefix(":") + ":00";
+}
+else
+{
+	a = hour + ":" + a.getsuffix(":").getprefix(":") + ":00";
+}
+input.Overall_Time = a;
+// info a ;
+// a = a.toList(":");
+// hour = a.get(0);
+// min = a.get(1);
+// info a;
+// // a = a.getprefix(":")+":"+a.getsuffix(":").getprefix(":")+":00";
+// // aa = a.toTime("HH:mm");
+// // info aa;
+// // aa =aa.tostring("hh:mm:ss");
+// // input.Overall_Time = a;
+// input.Overall_Time=hour+":"+min+":00";
