@@ -1,0 +1,12 @@
+monthFilter = Attendence[Attendee_Name == input.Attendee_Name];
+month = monthFilter.Check_Out.getMonth();
+monthlysalary = 0;
+for each  i in monthFilter
+{
+	if(i.Check_Out.getMonth() == month)
+	{
+		temp = i.Salary;
+		monthlysalary = monthlysalary + temp.tolong();
+	}
+}
+input.Month_Salary = monthlysalary;
