@@ -1,0 +1,30 @@
+days = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+num = days.get(input.Check_Out.getDayOfWeek() - 1);
+if(Check_In != null && Check_Out != null)
+{
+	if(Check_In.getDate() == Check_Out.getDate())
+	{
+		var = 100;
+		var1 = 200;
+		var2 = 300;
+	}
+	else
+	{
+		var = input.Check_In.workdaysBetween(input.Check_Out) * 100;
+		var1 = input.Check_In.workdaysBetween(input.Check_Out,{"Monday","Tuesday","Wednesday","Thursday","Friday","Sunday"}) * 200;
+		var2 = input.Check_In.workdaysBetween(input.Check_Out,{"Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"}) * 300;
+	}
+	if(num == "Saturday")
+	{
+		sal = var1;
+	}
+	else if(num == "Sunday")
+	{
+		sal = var2;
+	}
+	else
+	{
+		sal = var;
+	}
+}
+input.Salary = sal;
