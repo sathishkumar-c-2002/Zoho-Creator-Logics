@@ -1,0 +1,32 @@
+//Step 1
+
+void Thinker_Bee.Api_For_Zoho_Creator()
+{
+	client_ID = "1000.O97NH0K0INXJ9LE0AZAT8GDN7UCV2C";
+	client_Secrete = "d93833dcef4fdc25e506f1c6df6f960fae44dddb71";
+	scope = "ZohoCreator.form.CREATE";
+	redirect = "https://www.zrubix.com/";
+	url = "https://accounts.zoho.in/oauth/v2/auth?response_type=code&client_id=" + client_ID + "&scope=" + scope + "&redirect_uri=" + redirect + "&access_type=offline";
+	info url;
+	auth = "https://www.zrubix.com/?code=1000.ad70caf7e193f49147bd4997feb25b45.e6747e10aaaf3add9a52291acabcabf9&location=in&accounts-server=https%3A%2F%2Faccounts.zoho.in";
+	code = "1000.ad70caf7e193f49147bd4997feb25b45.e6747e10aaaf3add9a52291acabcabf9";
+	// 	link = "https://accounts.zoho.in/oauth/v2/token?grant_type=authorization_code&client_id="+client_ID+"&client_secret="+client_Secrete+"&redirect_uri="+redirect+"&code="+code;
+	// 	resp = invokeUrl
+	//     [
+	//     	url: link
+	//     	type: POST
+	//     ];
+	// 	info resp;
+	// 	ref = "{\"access_token\":\"1000.b9782dc84716aee716f95af83e6e662c.b1d5d171fc7ab7109add04ca46673c50\",\"refresh_token\":\"1000.b8e3bc82fb293a37975f3a9bd1962485.768e109f68e4673a144da3420b304096\",\"scope\":\"ZohoCreator.form.CREATE\",\"api_domain\":\"https://www.zohoapis.in\",\"token_type\":\"Bearer\",\"expires_in\":3600}"
+	refresh_token = "1000.b8e3bc82fb293a37975f3a9bd1962485.768e109f68e4673a144da3420b304096";
+	links = "https://accounts.zoho.in/oauth/v2/token?refresh_token=" + refresh_token + "&client_id=" + client_ID + "&client_secret=" + client_Secrete + "&grant_type=refresh_token";
+	resp2 = invokeurl
+	[
+		url :links
+		type :POST
+	];
+	info resp2;
+	// 	final = "
+	// {"access_token":"1000.67349b006bc64e78891fb8d40ae8101b.7c765229eefa2fe77f73eb45c3fe7537\",\"scope\":\"ZohoCreator.form.CREATE\",\"api_domain\":\"https://www.zohoapis.in\",\"token_type\":\"Bearer","expires_in":3600}";
+	Final_Access = "1000.67349b006bc64e78891fb8d40ae8101b.7c765229eefa2fe77f73eb45c3fe7537";
+}
