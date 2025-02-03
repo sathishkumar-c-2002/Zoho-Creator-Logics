@@ -1,0 +1,54 @@
+void API.Creator_to_Sheets_No_Dulpi()
+{
+	paramMap = Map();
+	paramMap.put('method','worksheet.rows.delete');
+	paramMap.put('worksheet_name','Sheet1');
+	// 	paramMap.put('worksheet_id','0&range=');
+	dataList = List();
+	dataMap1 = Map();
+	dataMap1.put('start_row',2);
+	cc = Creator_to_Sheet[ID != null];
+	dataMap1.put('end_row',cc.count() + 1);
+	dataList.add(dataMap1);
+	paramMap.put('row_index_array',dataList);
+	resourceId = "9v4c3e8225fbe97f846d7a33715a5ef0eb706";
+	response1 = invokeurl
+	[
+		url :"https://sheet.zoho.in/api/v2/" + resourceId
+		type :POST
+		parameters:paramMap
+		connection:"zoho_sheet_connection"
+	];
+	info response1;
+	//////////////////////////////////////////////////////
+	//////////////////////
+	rec = Creator_to_Sheet[ID != null];
+	paramMap = Map();
+	paramMap.put('method','worksheet.records.add');
+	paramMap.put('worksheet_name','Sheet1');
+	paramMap.put('header_row',1);
+	resourceId = "9v4c3e8225fbe97f846d7a33715a5ef0eb706";
+	///////
+	lis = List();
+	dataMap = Map();
+	for each  l in rec
+	{
+		dataMap.put('ID',l.ID);
+		dataMap.put('Name',l.Name);
+		dataMap.put('Phone',l.Phone_Number);
+		dataMap.put('Email',l.Email);
+		temp = dataMap;
+		lis.add(temp);
+		dataMap.clear();
+	}
+	paramMap.put('json_data',lis);
+	//////
+	response = invokeurl
+	[
+		url :"https://sheet.zoho.in/api/v2/" + resourceId
+		type :POST
+		parameters:paramMap
+		connection:"zoho_sheet_connection"
+	];
+	info response;
+}
