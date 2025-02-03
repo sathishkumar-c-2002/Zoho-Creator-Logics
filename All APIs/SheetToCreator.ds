@@ -1,0 +1,39 @@
+void API.Sheet_to_Creator()
+{
+	paramMap = Map();
+	paramMap.put('method','worksheet.records.fetch');
+	paramMap.put('worksheet_name','Sheet1');
+	paramMap.put('header_row',1);
+	paramMap.put('column_names','Name,Phone,Email');
+	paramMap.put('render_option','formatted');
+	paramMap.put('records_start_index',1);
+	// paramMap.put('count', 2);
+	paramMap.put('is_case_sensitive',true);
+	resourceId = "9v4c3e8225fbe97f846d7a33715a5ef0eb706";
+	/////////
+	response = invokeurl
+	[
+		url :"https://sheet.zoho.in/api/v2/" + resourceId
+		type :POST
+		parameters:paramMap
+		connection:"zoho_sheet_connection"
+	];
+	////////////
+	// info response.get("records").get(0).get("Name");
+	i = 0;
+	for each  res in response.get("records")
+	{
+		name = response.get("records").get(i).get("Name");
+		phone = response.get("records").get(i).get("Phone");
+		email = response.get("records").get(i).get("Email");
+		i = i + 1;
+		/////
+		var = insert into Creator_to_Sheet
+		[
+			Added_User=zoho.loginuser
+			Name=name
+			Phone_Number=phone
+			Email=email
+		];
+	}
+}
